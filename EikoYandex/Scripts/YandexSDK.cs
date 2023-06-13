@@ -129,13 +129,13 @@ namespace Eiko.YaSDK
 #if UNITY_EDITOR
             editorCanvas = Instantiate(editorCanvas);
 #endif
-            AdsEnabled = 0 == PlayerPrefs.GetInt(key, 0);
+            
         }
 
         public IEnumerator InitDataPrefs()
         {
             yield return YandexPrefs.Init();
-
+            AdsEnabled = 0 == PlayerPrefs.GetInt(key, 0);
             IsFirstOpen = false;
         }
         
