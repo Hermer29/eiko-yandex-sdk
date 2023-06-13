@@ -138,6 +138,12 @@ namespace Eiko.YaSDK
 
             IsFirstOpen = false;
         }
+        
+        public IEnumerator Initialize()
+        {
+            yield return YandexSDK.instance.InitDataPrefs();
+            YandexSDK.instance.InitializePurchases();
+        }
 
         /// <summary>
         /// Call this to ask user to authenticate
